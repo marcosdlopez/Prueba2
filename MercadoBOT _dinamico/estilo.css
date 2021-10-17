@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --font-color: #343837;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    height: 100vh;
+    width: 100vw;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(105deg, rgba(3, 113, 156, 1) 50%, rgba(15, 155, 142, 1) 50%);
+    color: var(--font-color);
+}
+
+h1,p{
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+p{
+    font-size: 1.5em;
+}
+
+.contenedor {
+    display: flex;
+    width: 50rem;
+    background-color: rgba(255,255,255, 0.8);
+    border-radius: 5px;
+    padding: 2.5rem;
+    margin-bottom: 50px;
+}
+
+#lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lista-item {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 10rem 1fr 8rem 5rem;
+    align-items: center;
+    width: 100%;
+    transition: all 0.2s linear;
+    border-radius: 3px
+}
+
+.lista-item:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.lista-header {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: grid;
+    grid-template-columns: 10rem 1fr 9.5rem 6rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--font-color);
+}
+
+.caja-botones {
+    display: flex;
+}
+
+.caja-botones > * {
+    padding: 0 1.8rem;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-color);
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.1s linear;
+}
+
+.caja-botones > *:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-3px);
+}
+
+.caja-botones > *:active {
+    box-shadow: 0 9px 18px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    transform: translateY(-1px);
+}
+
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--font-color);
+    margin-top: 0.5rem;
+}
+
+.footer-contenedor > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1.5rem 0 1.3rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 0.2px solid grey;
+    padding-right: 1.5rem;
+}
+
+/**************** Panel de Productos ********************/
+
+#carrito{
+    align-items: start;
+    margin-left:20px;
+    border: 5px solid rgb(17, 223, 201);
+    flex-wrap: wrap;
+    overflow: scroll;
+    max-height: 500px;
+}
+.item{
+    width: 24%;
+    margin-right: 1%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+.item img{
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.item p{
+    color: black !important;
+    margin-top: 5px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.televisor{
+    background-image: url('img/televisor.jpg');
+}
+.licuadora{
+    background-image: url('img/licuadora.jpg');
+}
+.smartphone{
+    background-image: url('img/smartphone.jpg');
+}
+.heladera{
+    background-image: url('img/heladera.jpg');
+}
+.notebook{
+    background-image: url('img/notebook.jpg');
+}
+
+/**************Auxiliares**************/
+.auxiliares{
+    display:none;
+}
+
+
+/* TODO: Work on my media queries. Maybe do a Media Query Manager?*/
+
+@media screen and (hover: none) and (max-width: 43.75em) {
+    html {
+        font-size: 90%;
+    }
+    .contenedor {
+        width: 60vw;
+        height: 75vh;
+        /* align-content: space-around; */
+    }
+
+    .lista-header {
+        grid-template-columns: 14rem 1fr 13rem 6rem;
+    }
+
+    .caja-botones > * {
+        padding: 0 1.8rem;
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--font-color);
+        border-radius: 2px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.1s linear;
+    }
+
+    .caja-botones > *:hover {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: translateY(0px);
+    }
+
+    .caja-botones > *:active {
+        box-shadow: inset 10px 10px 13px -7px rgba(0,0,0,0.53);
+        transform: translateY(1px);
+    }
+}
+
+@media screen and (hover: none) and (max-width: 62.5em) {
+    html {
+        font-size: 70%;
+    }
+    .contenedor {
+        width: 60vw;
+        height: 75vh;
+        /* align-content: space-around; */
+    }
+
+    .lista-header {
+        grid-template-columns: 14rem 1fr 13rem 6rem;
+    }
+
+    .caja-botones > * {
+        padding: 0 1.8rem;
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--font-color);
+        border-radius: 2px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.1s linear;
+    }
+
+    .caja-botones > *:hover {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: translateY(0px);
+    }
+
+    .caja-botones > *:active {
+        box-shadow: inset 10px 10px 13px -7px rgba(0,0,0,0.53);
+        transform: translateY(1px);
+    }
+}
+

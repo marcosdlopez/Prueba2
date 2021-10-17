@@ -1,0 +1,66 @@
+.modal{
+    position: fixed;
+    top: 30vh;
+    background-color: #093f40;
+    color: white;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 5px;
+    right: -500px;
+}
+
+.modal-show{
+    animation: aparecer 0.7s ;
+    animation-direction: normal;
+    right: 35%;
+}
+@keyframes aparecer {
+    from   {right: -500px;}
+    to {right: 35%;}
+}
+
+.modal-hide{
+    animation: desaparecer 0.7s;
+    animation-direction: normal;
+    right: -500px;
+}
+@keyframes desaparecer {
+    from {right: 35%;}
+    to {right: -500px;}
+}
+
+.modal p{
+    margin-top:0;
+}
+.modal #btn-aceptar{
+    display: block;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #151717;
+    transition: 0.5s;
+}
+.modal #btn-aceptar:hover{
+    transform:scale(1.03);
+    cursor: pointer;
+    background-color: #242046;
+    box-shadow: 0px 0px 5px black;
+}
+.modal #btn-aceptar:active{
+    transform:scale(1.01);
+    box-shadow: 0px 0px 5px white;
+}
+
+.modal-compra{
+    background-color: #138424 !important;
+}
+.modal-venta{
+    background-color: #e91e63 !important;
+}
+.modal-alerta{
+    background-color: #e0240a !important;
+}
